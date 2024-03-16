@@ -16,11 +16,14 @@
   gap: 8px;
   font-size: 18px;
   white-space: nowrap;
-  font-weight: 600;
   text-decoration: none;
   cursor: inherit;
   transition: var(--change-theme);
   -webkit-tap-highlight-color: transparent;
+}
+
+.item :not(.icon) {
+  font-weight: 600;
 }
 
 .icon {
@@ -40,15 +43,13 @@
 
 .thumb {
   position: absolute;
-  box-sizing: border-box;
   right: -1px;
   top: -1px;
   width: 40px;
   height: inherit;
   border-radius: inherit;
-  border: inherit;
   background-color: var(--fg-color);
-  transition: var(--change-theme);
+  transition: transform 300ms ease-in-out, var(--change-theme);
 }
 
 .thumb.dark {
