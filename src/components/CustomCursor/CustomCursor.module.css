@@ -1,0 +1,38 @@
+@media (hover: hover) {
+  body {
+    cursor: none;
+  }
+
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+
+  .cursor {
+    /* 
+    Не заменять фикс значение переменной, чтобы при mix-blend-mode: difference; 
+    курсор был всегда контрастного цвета
+  */
+    background-color: #e3f7f7;
+    isolation: isolate;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    transition: transform 100ms ease-out;
+    will-change: transform;
+  }
+}
+
+@media (hover: none) {
+  .wrapper {
+    display: none;
+  }
+}

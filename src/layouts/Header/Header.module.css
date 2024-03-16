@@ -1,0 +1,117 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  background-color: var(--bg-color);
+  font-family: var(--main);
+  font-weight: 300;
+  border-radius: 50px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(auto, 200px);
+  border: 1px solid var(--fg-color);
+  line-height: 1.5;
+  overflow: hidden;
+  transition: background-color var(--transition-time),
+    border-color var(--transition-time);
+}
+
+.item {
+  color: var(--fg-color);
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: inherit;
+  transition: color var(--transition-time), border-color var(--transition-time),
+    background-color var(--transition-time);
+}
+
+.item:not(:last-child) {
+  border-right: 1px solid var(--fg-color);
+}
+
+.icon {
+  font-family: var(--icons);
+}
+
+.switcher {
+  max-width: 80px;
+  width: 100px;
+  border-radius: 20px;
+  height: 20px;
+  border: 1px solid var(--fg-color);
+  position: relative;
+  box-sizing: border-box;
+  transition: border-color var(--transition-time);
+}
+
+.thumb {
+  position: absolute;
+  box-sizing: border-box;
+  right: -1px;
+  top: -1px;
+  width: 40px;
+  height: inherit;
+  border-radius: inherit;
+  border: inherit;
+  background-color: var(--fg-color);
+  transition: transform var(--transition-time) ease-in-out,
+    background-color var(--transition-time), border-color var(--transition-time);
+}
+
+.thumb.dark {
+  transform: translateX(0%);
+}
+
+.thumb.light {
+  transform: translateX(-100%);
+}
+
+@media (hover: hover) {
+  .item:not(.withSwitcher):hover {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+  }
+}
+
+@media (hover: none) {
+  .item:not(.withSwitcher):active {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+  }
+}
+
+@media (max-width: 1024px) {
+  .list {
+    grid-auto-columns: 150px;
+  }
+
+  .item {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .switcher {
+    width: 60px;
+  }
+
+  .thumb {
+    width: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+}

@@ -1,0 +1,9 @@
+:root {
+  --bg-color: #e3f7f7;
+  --fg-color: #0b0a0a;
+}
+
+:root.dark {
+  --bg-color: #0b0a0a;
+  --fg-color: #e3f7f7;
+}

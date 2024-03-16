@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: "Anek Latin", sans-serif;
-  cursor: none;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
   overflow-x: hidden;
+  transition: background-color var(--transition-time);
 }
