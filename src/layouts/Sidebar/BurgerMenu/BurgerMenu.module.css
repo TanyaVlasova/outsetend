@@ -1,0 +1,31 @@
+.burgerMenu {
+  height: 60px;
+  width: 60px;
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  font-family: var(--icons);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: inherit;
+  border: none;
+  transition: var(--change-theme);
+}
+
+.icon {
+  font-size: 30px;
+}
+
+@media (hover: none) {
+  .burgerMenu:active {
+    filter: invert(0.2);
+  }
+}
+
+@media (max-width: 360px) {
+  .burgerMenu {
+    width: 45px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,125 @@
+.navigation {
+  background-color: var(--bg-color);
+  font-family: var(--main);
+  font-weight: 300;
+  line-height: 1.5;
+  overflow: hidden;
+  transition: var(--change-theme);
+}
+
+.item {
+  color: var(--fg-color);
+  box-sizing: border-box;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: inherit;
+  transition: var(--change-theme);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon {
+  font-family: var(--icons);
+}
+
+.switcher {
+  max-width: 80px;
+  width: 100px;
+  border-radius: 20px;
+  height: 20px;
+  border: 1px solid var(--fg-color);
+  position: relative;
+  box-sizing: border-box;
+  transition: var(--change-theme);
+}
+
+.thumb {
+  position: absolute;
+  box-sizing: border-box;
+  right: -1px;
+  top: -1px;
+  width: 40px;
+  height: inherit;
+  border-radius: inherit;
+  border: inherit;
+  background-color: var(--fg-color);
+  transition: var(--change-theme);
+}
+
+.thumb.dark {
+  transform: translateX(0%);
+}
+
+.thumb.light {
+  transform: translateX(-100%);
+}
+
+@media (hover: hover) {
+  .item:not(.withSwitcher):hover {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+  }
+}
+
+@media (hover: none) {
+  .item:not(.withSwitcher):active {
+    background-color: var(--fg-color);
+    color: var(--bg-color);
+  }
+}
+
+@media (min-width: 769px) {
+  .navigation {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(auto, 200px);
+    border-radius: 50px;
+    border: 1px solid var(--fg-color);
+  }
+
+  .item {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .item:not(:last-child) {
+    border-right: 1px solid var(--fg-color);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navigation {
+    grid-auto-columns: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .item {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .switcher {
+    width: 60px;
+  }
+
+  .thumb {
+    width: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item:not(:last-child) {
+    border-bottom: 1px solid var(--fg-color);
+  }
+}
