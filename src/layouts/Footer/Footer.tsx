@@ -3,6 +3,7 @@ import { FC, HTMLAttributes } from "react";
 import styles from "./Footer.module.css";
 import Navigation from "components/Navigation";
 import Socials from "components/Socials";
+import { Link } from "react-router-dom";
 
 interface FooterProps extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -13,9 +14,9 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <footer className={cn(styles.footer, className)} {...restProps}>
-      <a className={cn(styles.item, styles.nickname)} href="/Portfolio">
+      <Link className={cn(styles.item, styles.nickname)} to="/Portfolio">
         outsetend
-      </a>
+      </Link>
       <Navigation
         className={cn(styles.item, styles.navigation)}
         view="vertical"

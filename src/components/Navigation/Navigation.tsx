@@ -2,6 +2,7 @@ import cn from "classnames";
 import styles from "./Navigation.module.css";
 import { useCallback, type FC, type HTMLAttributes, useState } from "react";
 import { Theme } from "types/base";
+import { Link } from "react-router-dom";
 
 interface NavigationProps extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -62,18 +63,18 @@ const Navigation: FC<NavigationProps> = (props) => {
         </div>
       )}
 
-      <a className={styles.item} href="/Portfolio">
+      <Link className={styles.item} to="/Portfolio/about">
         <span className={styles.icon}>face</span>
         <span>Обо мне</span>
-      </a>
-      <a className={styles.item} href="/Portfolio">
+      </Link>
+      <Link className={styles.item} to="/Portfolio/projects">
         <span className={styles.icon}>image</span>
         <span>Проекты</span>
-      </a>
-      <a className={styles.item} href="/Portfolio">
+      </Link>
+      <Link className={styles.item} to="/Portfolio/contact">
         <span className={styles.icon}>email</span>
         <span>Контакты</span>
-      </a>
+      </Link>
     </nav>
   );
 };

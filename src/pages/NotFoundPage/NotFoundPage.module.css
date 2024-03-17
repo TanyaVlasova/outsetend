@@ -1,0 +1,17 @@
+.wrapper {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.link {
+  font-size: 25px;
+  color: var(--fg-color);
+  cursor: inherit;
+}
