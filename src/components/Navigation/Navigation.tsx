@@ -45,14 +45,14 @@ const Navigation: FC<NavigationProps> = (props) => {
       {withTheme && (
         <div className={cn(styles.item, styles.withSwitcher)}>
           <span className={styles.icon}>sunny</span>
-          <div className={styles.switcher} onClick={handleThemeSwitch}>
+          <button className={styles.switcher} onClick={handleThemeSwitch}>
             <div
               className={cn(styles.thumb, {
                 [styles.light]: currentTheme === "light",
                 [styles.dark]: currentTheme === "dark",
               })}
             />
-          </div>
+          </button>
           <span className={styles.icon}>dark_mode</span>
           {view === "vertical" && (
             <button className={styles.close} onClick={handleClose}>
