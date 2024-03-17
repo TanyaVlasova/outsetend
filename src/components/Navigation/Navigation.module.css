@@ -41,6 +41,7 @@
   box-sizing: border-box;
   transition: var(--change-theme);
   background-color: transparent;
+  cursor: inherit;
 }
 
 .thumb {
