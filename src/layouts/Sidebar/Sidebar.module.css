@@ -33,6 +33,12 @@
   transform: translateX(0);
 }
 
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #0000008f;
+}
+
 @media (min-width: 321px) {
   .navigation {
     border-left: 1px solid var(--fg-color);

@@ -61,6 +61,21 @@
   transform: translateX(-100%);
 }
 
+.close {
+  margin-left: auto;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--fg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg-color);
+  font-size: 20px;
+  transition: var(--change-theme);
+  background-color: transparent;
+}
+
 .horizontal.navigation {
   display: grid;
   grid-auto-flow: column;

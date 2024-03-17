@@ -17,14 +17,16 @@ const Sidebar: FC<SidebarProps> = (props) => {
     setIsOpen((prev) => !prev);
   }, []);
 
-  const handleClickOutside = useCallback(() => {
+  const handleCloseSidebar = useCallback(() => {
     setIsOpen(false);
   }, []);
 
   return (
     <div className={cn(styles.sidebar, className)} {...restProps}>
+      {isOpen && <div className={styles.overlay} />}
+
       <div className={styles.container}>
-        <OutsideClickHandler onOutsideClick={handleClickOutside}>
+        <OutsideClickHandler onOutsideClick={handleCloseSidebar}>
           <BurgerMenu
             className={styles.burgerMenu}
             onClick={handleToggleSidebar}
@@ -32,6 +34,7 @@ const Sidebar: FC<SidebarProps> = (props) => {
           <Navigation
             className={cn(styles.navigation, { [styles.isOpen]: isOpen })}
             view="vertical"
+            onClose={handleCloseSidebar}
             withTheme
           />
         </OutsideClickHandler>

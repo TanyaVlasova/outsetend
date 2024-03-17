@@ -7,6 +7,7 @@ interface NavigationProps extends HTMLAttributes<HTMLElement> {
   className?: string;
   view: "vertical" | "horizontal";
   withTheme?: boolean;
+  onClose?: () => void;
 }
 
 const Navigation: FC<NavigationProps> = (props) => {
@@ -14,6 +15,7 @@ const Navigation: FC<NavigationProps> = (props) => {
     className,
     view = "horizontal",
     withTheme = false,
+    onClose,
     ...restProps
   } = props;
   const [currentTheme, setCurrentTheme] = useState(
@@ -27,6 +29,10 @@ const Navigation: FC<NavigationProps> = (props) => {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
     setCurrentTheme(newTheme);
   }, [currentTheme]);
+
+  const handleClose = useCallback(() => {
+    if (onClose) onClose();
+  }, [onClose]);
 
   return (
     <nav
@@ -48,6 +54,11 @@ const Navigation: FC<NavigationProps> = (props) => {
             />
           </div>
           <span className={styles.icon}>dark_mode</span>
+          {view === "vertical" && (
+            <button className={styles.close} onClick={handleClose}>
+              <span className={styles.icon}>close</span>
+            </button>
+          )}
         </div>
       )}
 

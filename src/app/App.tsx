@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useState, type FC, useEffect } from "react";
 import styles from "./App.module.css";
 
 import Header from "layouts/Header";
@@ -8,7 +8,14 @@ import Footer from "layouts/Footer/Footer";
 import { useMatchMedia } from "hooks";
 
 const App: FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const { isMobile } = useMatchMedia();
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  if (!isLoaded) return null;
 
   return (
     <div className={styles.app}>
