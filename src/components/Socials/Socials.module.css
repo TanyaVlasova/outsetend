@@ -1,0 +1,46 @@
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social {
+  text-decoration: none;
+  cursor: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--fg-color);
+  fill: var(--fg-color);
+  transition: var(--change-theme), fill 300ms;
+}
+
+@media (max-width: 767px) {
+  .socials {
+    gap: 15px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+    padding: 8px;
+  }
+}
+
+@media (hover: hover) {
+  .icon:hover {
+    background-color: var(--fg-color);
+    fill: var(--bg-color);
+  }
+}
+
+@media (hover: none) {
+  .icon:active {
+    background-color: var(--fg-color);
+    fill: var(--bg-color);
+  }
+}

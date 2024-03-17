@@ -51,15 +51,15 @@ const Navigation: FC<NavigationProps> = (props) => {
         </div>
       )}
 
-      <a className={styles.item} href="/">
+      <a className={styles.item} href="/Portfolio">
         <span className={styles.icon}>face</span>
         <span>Обо мне</span>
       </a>
-      <a className={styles.item} href="/">
+      <a className={styles.item} href="/Portfolio">
         <span className={styles.icon}>image</span>
         <span>Проекты</span>
       </a>
-      <a className={styles.item} href="/">
+      <a className={styles.item} href="/Portfolio">
         <span className={styles.icon}>email</span>
         <span>Контакты</span>
       </a>

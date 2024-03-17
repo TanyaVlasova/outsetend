@@ -28,6 +28,7 @@
 
 .icon {
   font-family: var(--icons);
+  font-weight: 300;
 }
 
 .switcher {
