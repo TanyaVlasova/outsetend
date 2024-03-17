@@ -5,10 +5,17 @@ import { Theme } from "types/base";
 
 interface NavigationProps extends HTMLAttributes<HTMLElement> {
   className?: string;
+  view: "vertical" | "horizontal";
+  withTheme?: boolean;
 }
 
 const Navigation: FC<NavigationProps> = (props) => {
-  const { className, ...restProps } = props;
+  const {
+    className,
+    view = "horizontal",
+    withTheme = false,
+    ...restProps
+  } = props;
   const [currentTheme, setCurrentTheme] = useState(
     (window.localStorage.getItem("theme") as Theme) || "dark"
   );
@@ -22,19 +29,28 @@ const Navigation: FC<NavigationProps> = (props) => {
   }, [currentTheme]);
 
   return (
-    <nav className={cn(styles.navigation, className)} {...restProps}>
-      <div className={cn(styles.item, styles.withSwitcher)}>
-        <span className={styles.icon}>sunny</span>
-        <div className={styles.switcher} onClick={handleThemeSwitch}>
-          <div
-            className={cn(styles.thumb, {
-              [styles.light]: currentTheme === "light",
-              [styles.dark]: currentTheme === "dark",
-            })}
-          />
+    <nav
+      className={cn(styles.navigation, className, {
+        [styles.vertical]: view === "vertical",
+        [styles.horizontal]: view === "horizontal",
+      })}
+      {...restProps}
+    >
+      {withTheme && (
+        <div className={cn(styles.item, styles.withSwitcher)}>
+          <span className={styles.icon}>sunny</span>
+          <div className={styles.switcher} onClick={handleThemeSwitch}>
+            <div
+              className={cn(styles.thumb, {
+                [styles.light]: currentTheme === "light",
+                [styles.dark]: currentTheme === "dark",
+              })}
+            />
+          </div>
+          <span className={styles.icon}>dark_mode</span>
         </div>
-        <span className={styles.icon}>dark_mode</span>
-      </div>
+      )}
+
       <a className={styles.item} href="/">
         <span className={styles.icon}>face</span>
         <span>Обо мне</span>

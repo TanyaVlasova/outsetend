@@ -31,6 +31,8 @@ const Sidebar: FC<SidebarProps> = (props) => {
           />
           <Navigation
             className={cn(styles.navigation, { [styles.isOpen]: isOpen })}
+            view="vertical"
+            withTheme
           />
         </OutsideClickHandler>
       </div>

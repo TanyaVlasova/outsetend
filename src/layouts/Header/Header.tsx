@@ -12,7 +12,7 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={cn(styles.header, className)} {...restProps}>
-      <Navigation />
+      <Navigation view="horizontal" withTheme />
     </header>
   );
 };

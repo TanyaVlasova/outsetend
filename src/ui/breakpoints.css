@@ -1,9 +1,5 @@
 :root {
-  --desktop-m: 1536px;
-  --desktop-s: 1366px;
-  --tablet-m: 1024px;
-  --tablet-s: 768px;
-  --mobile-m: 640px;
-  --mobile-s: 360px;
-  --mobile-xs: 320px;
+  --is-desktop: (min-width: 1281px);
+  --is-tablet: (min-width: 768px) and (max-width: 1280px);
+  --is-mobile: (max-width: 767px);
 }
