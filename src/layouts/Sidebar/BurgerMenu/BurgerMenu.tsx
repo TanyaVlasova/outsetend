@@ -1,6 +1,8 @@
-import cn from "classnames";
-import styles from "./BurgerMenu.module.css";
-import type { ButtonHTMLAttributes, FC } from "react";
+import cn from 'classnames';
+
+import styles from './BurgerMenu.module.css';
+
+import type { ButtonHTMLAttributes, FC } from 'react';
 
 interface BurgerMenuProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

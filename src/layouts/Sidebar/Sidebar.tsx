@@ -1,9 +1,11 @@
-import cn from "classnames";
-import styles from "./Sidebar.module.css";
-import Navigation from "components/Navigation";
-import { useCallback, type FC, type HTMLAttributes, useState } from "react";
-import BurgerMenu from "./BurgerMenu";
-import OutsideClickHandler from "./OutsideClickHandler";
+import cn from 'classnames';
+
+import Navigation from 'components/Navigation';
+import { useCallback, type FC, type HTMLAttributes, useState } from 'react';
+
+import styles from './Sidebar.module.css';
+import BurgerMenu from './BurgerMenu';
+import OutsideClickHandler from './OutsideClickHandler';
 
 interface SidebarProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

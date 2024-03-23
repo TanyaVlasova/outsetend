@@ -1,7 +1,10 @@
-import cn from "classnames";
-import styles from "./Header.module.css";
-import Navigation from "components/Navigation";
-import type { FC, HTMLAttributes } from "react";
+import cn from 'classnames';
+
+import Navigation from 'components/Navigation';
+
+import styles from './Header.module.css';
+
+import type { FC, HTMLAttributes } from 'react';
 
 interface HeaderProps extends HTMLAttributes<HTMLElement> {
   className?: string;

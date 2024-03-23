@@ -1,14 +1,14 @@
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from 'react';
 
-type Device = "isDesktop" | "isTablet" | "isMobile";
+type Device = 'isDesktop' | 'isTablet' | 'isMobile';
 
 type MediaQueries = { [key in Device]: string };
 type MatchedMedia = { [key in Device]: boolean };
 
 const mediaQueries: MediaQueries = {
-  isDesktop: "(min-width: 1281px)",
-  isTablet: "(min-width: 768px) and (max-width: 1280px)",
-  isMobile: "(max-width: 767px)",
+  isDesktop: '(min-width: 1281px)',
+  isTablet: '(min-width: 768px) and (max-width: 1280px)',
+  isMobile: '(max-width: 767px)',
 };
 
 export function useMatchMedia(): MatchedMedia {
@@ -33,9 +33,9 @@ export function useMatchMedia(): MatchedMedia {
 
     setTimeout(handleResize);
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return matchedMedia;

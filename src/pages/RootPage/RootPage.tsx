@@ -1,12 +1,13 @@
-import { useMatchMedia } from "hooks";
-import styles from "./RootPage.module.css";
+import { useMatchMedia } from 'hooks';
+import { Outlet } from 'react-router-dom';
 
-import { useState, type FC, useEffect } from "react";
-import Sidebar from "layouts/Sidebar";
-import Header from "layouts/Header";
-import { Outlet } from "react-router-dom";
-import Footer from "layouts/Footer";
-import CustomCursor from "components/CustomCursor";
+import { useState, type FC, useEffect } from 'react';
+import Sidebar from 'layouts/Sidebar';
+import Header from 'layouts/Header';
+import Footer from 'layouts/Footer';
+import CustomCursor from 'components/CustomCursor';
+
+import styles from './RootPage.module.css';
 
 const RootPage: FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);

@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
-import type { HTMLAttributes, PropsWithChildren, FC } from "react";
+import { useRef, useEffect } from 'react';
+
+import type { HTMLAttributes, PropsWithChildren, FC } from 'react';
 
 interface OutsideClickHandlerProps
   extends HTMLAttributes<HTMLDivElement>,
@@ -21,10 +22,10 @@ const OutsideClickHandler: FC<OutsideClickHandlerProps> = (props) => {
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [onOutsideClick]);
 

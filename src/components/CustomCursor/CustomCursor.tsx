@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import styles from "./CustomCursor.module.css";
+import styles from './CustomCursor.module.css';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 const CustomCursor: FC = () => {
   const cursor = useRef<HTMLDivElement>(null);
@@ -24,15 +24,16 @@ const CustomCursor: FC = () => {
         y: ((event.clientY / windowHeight) * 100 - 50).toFixed(3),
       };
 
-      cursor.current.style.transform = `translate(calc(${cursorCoords.x}vw), calc(${cursorCoords.y}vh))`;
+      cursor.current.style.transform = `translate(calc(${cursorCoords.x}vw), 
+        calc(${cursorCoords.y}vh))`;
     };
 
-    window.addEventListener("resize", handleResize);
-    document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener('resize', handleResize);
+    document.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener('resize', handleResize);
+      document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
 

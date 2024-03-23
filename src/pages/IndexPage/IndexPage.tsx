@@ -1,9 +1,9 @@
-import styles from "./IndexPage.module.css";
+import styles from './IndexPage.module.css';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 const IndexPage: FC = () => {
-  return <div className={styles.wrapper}>Index page</div>;
+  return <div className={styles.wrapper}>e wfciw r ;fcwrio</div>;
 };
 
 export default IndexPage;

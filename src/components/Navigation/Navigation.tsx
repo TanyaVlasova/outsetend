@@ -1,12 +1,14 @@
-import cn from "classnames";
-import styles from "./Navigation.module.css";
-import { useCallback, type FC, type HTMLAttributes, useState } from "react";
-import { Theme } from "types/base";
-import { Link } from "react-router-dom";
+import cn from 'classnames';
+
+import { useCallback, type FC, type HTMLAttributes, useState } from 'react';
+import { Theme } from 'types/base';
+import { Link } from 'react-router-dom';
+
+import styles from './Navigation.module.css';
 
 interface NavigationProps extends HTMLAttributes<HTMLElement> {
   className?: string;
-  view: "vertical" | "horizontal";
+  view: 'vertical' | 'horizontal';
   withTheme?: boolean;
   onClose?: () => void;
 }
@@ -14,20 +16,20 @@ interface NavigationProps extends HTMLAttributes<HTMLElement> {
 const Navigation: FC<NavigationProps> = (props) => {
   const {
     className,
-    view = "horizontal",
+    view = 'horizontal',
     withTheme = false,
     onClose,
     ...restProps
   } = props;
   const [currentTheme, setCurrentTheme] = useState(
-    (window.localStorage.getItem("theme") as Theme) || "dark"
+    (window.localStorage.getItem('theme') as Theme) || 'dark',
   );
 
   const handleThemeSwitch = useCallback(() => {
-    const newTheme: Theme = currentTheme === "dark" ? "light" : "dark";
+    const newTheme: Theme = currentTheme === 'dark' ? 'light' : 'dark';
 
-    window.localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    window.localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('dark', newTheme === 'dark');
     setCurrentTheme(newTheme);
   }, [currentTheme]);
 
@@ -38,8 +40,8 @@ const Navigation: FC<NavigationProps> = (props) => {
   return (
     <nav
       className={cn(styles.navigation, className, {
-        [styles.vertical]: view === "vertical",
-        [styles.horizontal]: view === "horizontal",
+        [styles.vertical]: view === 'vertical',
+        [styles.horizontal]: view === 'horizontal',
       })}
       {...restProps}
     >
@@ -49,13 +51,13 @@ const Navigation: FC<NavigationProps> = (props) => {
           <button className={styles.switcher} onClick={handleThemeSwitch}>
             <div
               className={cn(styles.thumb, {
-                [styles.light]: currentTheme === "light",
-                [styles.dark]: currentTheme === "dark",
+                [styles.light]: currentTheme === 'light',
+                [styles.dark]: currentTheme === 'dark',
               })}
             />
           </button>
           <span className={styles.icon}>dark_mode</span>
-          {view === "vertical" && (
+          {view === 'vertical' && (
             <button className={styles.close} onClick={handleClose}>
               <span className={styles.icon}>close</span>
             </button>

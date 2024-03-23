@@ -1,6 +1,8 @@
-import cn from "classnames";
-import styles from "./Socials.module.css";
-import { type FC, type HTMLAttributes } from "react";
+import cn from 'classnames';
+
+import { type FC, type HTMLAttributes } from 'react';
+
+import styles from './Socials.module.css';
 
 interface SocialsProps extends HTMLAttributes<HTMLElement> {
   className?: string;
@@ -11,12 +13,7 @@ const Socials: FC<SocialsProps> = (props) => {
 
   return (
     <div className={cn(styles.socials, className)} {...restProps}>
-      <a
-        className={styles.social}
-        href="https://t.me/outsetend"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a className={styles.social} href="https://t.me/outsetend" target="_blank" rel="noreferrer">
         <svg
           className={styles.icon}
           xmlns="http://www.w3.org/2000/svg"

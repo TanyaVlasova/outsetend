@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
-import styles from "./NotFoundPage.module.css";
+import { Link } from 'react-router-dom';
 
-import type { FC } from "react";
+import styles from './NotFoundPage.module.css';
+
+import type { FC } from 'react';
 
 const NotFoundPage: FC = () => {
   return (

@@ -1,9 +1,11 @@
-import cn from "classnames";
-import { FC, HTMLAttributes } from "react";
-import styles from "./Footer.module.css";
-import Navigation from "components/Navigation";
-import Socials from "components/Socials";
-import { Link } from "react-router-dom";
+import cn from 'classnames';
+import { FC, HTMLAttributes } from 'react';
+
+import Navigation from 'components/Navigation';
+import Socials from 'components/Socials';
+import { Link } from 'react-router-dom';
+
+import styles from './Footer.module.css';
 
 interface FooterProps extends HTMLAttributes<HTMLElement> {
   className?: string;

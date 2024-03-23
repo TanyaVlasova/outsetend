@@ -1,1 +1,1 @@
-export { default } from "./OutsideClickHandler";
+export { default } from './OutsideClickHandler';
