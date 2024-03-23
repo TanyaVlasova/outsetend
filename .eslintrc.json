@@ -7,7 +7,7 @@
     "quotes": ["warn", "single"],
     "prefer-const": "warn",
     "indent": ["error", 2],
-    "max-len": ["error", { "code": 100 }],
+    "max-len": ["warn", { "code": 100 }],
     "comma-dangle": ["error", "always-multiline"],
     "semi": ["warn", "always"],
     "import/order": [

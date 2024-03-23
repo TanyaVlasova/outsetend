@@ -29,15 +29,12 @@ const Sidebar: FC<SidebarProps> = (props) => {
 
       <div className={styles.container}>
         <OutsideClickHandler onOutsideClick={handleCloseSidebar}>
-          <BurgerMenu
-            className={styles.burgerMenu}
-            onClick={handleToggleSidebar}
-          />
+          <BurgerMenu className={styles.burgerMenu} onClick={handleToggleSidebar} />
           <Navigation
             className={cn(styles.navigation, { [styles.isOpen]: isOpen })}
             view="vertical"
-            onClose={handleCloseSidebar}
             withTheme
+            onClose={handleCloseSidebar}
           />
         </OutsideClickHandler>
       </div>

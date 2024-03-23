@@ -14,13 +14,7 @@ interface NavigationProps extends HTMLAttributes<HTMLElement> {
 }
 
 const Navigation: FC<NavigationProps> = (props) => {
-  const {
-    className,
-    view = 'horizontal',
-    withTheme = false,
-    onClose,
-    ...restProps
-  } = props;
+  const { className, view = 'horizontal', withTheme = false, onClose, ...restProps } = props;
   const [currentTheme, setCurrentTheme] = useState(
     (window.localStorage.getItem('theme') as Theme) || 'dark',
   );
@@ -65,15 +59,15 @@ const Navigation: FC<NavigationProps> = (props) => {
         </div>
       )}
 
-      <Link className={styles.item} to="/Portfolio/about">
+      <Link className={styles.item} to="/Portfolio/about" onClick={handleClose}>
         <span className={styles.icon}>face</span>
         <span>Обо мне</span>
       </Link>
-      <Link className={styles.item} to="/Portfolio/projects">
+      <Link className={styles.item} to="/Portfolio/projects" onClick={handleClose}>
         <span className={styles.icon}>image</span>
         <span>Проекты</span>
       </Link>
-      <Link className={styles.item} to="/Portfolio/contact">
+      <Link className={styles.item} to="/Portfolio/contact" onClick={handleClose}>
         <span className={styles.icon}>email</span>
         <span>Контакты</span>
       </Link>
