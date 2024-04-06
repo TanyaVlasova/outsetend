@@ -7,15 +7,14 @@ import styles from './VariableTitle.module.css';
 
 import type { FC, HTMLAttributes } from 'react';
 
-export interface VariableTitleProps extends HTMLAttributes<HTMLDivElement> {
+export interface TitleProps extends HTMLAttributes<HTMLDivElement> {
   text: string;
   card?: JSX.Element;
 }
 
-const VariableTitle: FC<VariableTitleProps> = (props) => {
+const VariableTitle: FC<TitleProps> = (props) => {
   const { className, text, card, ...restProps } = props;
   const [showedCard, setShowedCard] = useState(false);
-  const { hasCursor } = useMatchMedia();
   const titleRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -74,7 +73,8 @@ const VariableTitle: FC<VariableTitleProps> = (props) => {
           onMouseEnter={handleShowCard}
           onMouseLeave={handleHideCard}
         />
-        {hasCursor && card && (
+
+        {card && (
           <div className={cn(styles.card, { [styles.visible]: showedCard })} ref={cardRef}>
             {card}
           </div>
@@ -84,25 +84,22 @@ const VariableTitle: FC<VariableTitleProps> = (props) => {
   );
 };
 
-const VariableTitleContainer: FC<VariableTitleProps> = (props) => {
-  const { hasCursor } = useMatchMedia();
-  const [angle, setAngle] = useState(0);
+const StaticTitle: FC<TitleProps> = (props) => {
+  const { className, text, ...restProps } = props;
 
-  function handleChange() {
-    setAngle(window.screen.orientation.angle);
-  }
-
-  useEffect(() => {
-    window.screen.orientation.addEventListener('change', handleChange);
-
-    return () => window.screen.orientation.removeEventListener('change', handleChange);
-  }, []);
-
-  return hasCursor ? (
-    <VariableTitle {...props} text={angle.toString()} />
-  ) : (
-    <VariableTitle {...props} text={angle.toString()} />
+  return (
+    <div
+      className={cn(styles.title, className)}
+      dangerouslySetInnerHTML={{ __html: text }}
+      {...restProps}
+    />
   );
+};
+
+const VariableTitleContainer: FC<TitleProps> = (props) => {
+  const { hasCursor } = useMatchMedia();
+
+  return hasCursor ? <VariableTitle {...props} /> : <StaticTitle {...props} />;
 };
 
 export default VariableTitleContainer;
