@@ -1,0 +1,31 @@
+.card {
+  max-width: 350px;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid var(--fg-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  color: var(--fg-color);
+  align-items: flex-end;
+}
+
+.image {
+  width: 100%;
+  border: 1px solid var(--fg-color);
+  margin-bottom: 20px;
+  mix-blend-mode: luminosity;
+}
+
+.profession {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-variation-settings: 'wght' 200;
+  opacity: 0.8;
+}
+
+.person {
+  font-size: 22px;
+  font-variation-settings: 'wght' 600;
+}

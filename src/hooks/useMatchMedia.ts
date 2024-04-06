@@ -1,34 +1,45 @@
 import { useLayoutEffect, useState } from 'react';
 
-type Device = 'isDesktop' | 'isTablet' | 'isMobile';
+interface MediaQueries {
+  isDesktop: string;
+  isTablet: string;
+  isMobile: string;
+  hasCursor: string;
+}
 
-type MediaQueries = { [key in Device]: string };
-type MatchedMedia = { [key in Device]: boolean };
+interface MediaQueriesResult {
+  isDesktop: boolean;
+  isTablet: boolean;
+  isMobile: boolean;
+  hasCursor: boolean;
+}
 
 const mediaQueries: MediaQueries = {
   isDesktop: '(min-width: 1281px)',
   isTablet: '(min-width: 768px) and (max-width: 1280px)',
   isMobile: '(max-width: 767px)',
+  hasCursor: '(hover: hover)',
 };
 
-export function useMatchMedia(): MatchedMedia {
-  const [matchedMedia, setMatchedMedia] = useState<MatchedMedia>({
+export function useMatchMedia(): MediaQueriesResult {
+  const [mediaQueriesResult, setMediaQueriesResult] = useState<MediaQueriesResult>({
     isDesktop: false,
     isTablet: false,
     isMobile: false,
+    hasCursor: false,
   });
 
   useLayoutEffect(() => {
     function handleResize() {
-      const entries = Object.entries(mediaQueries).map(([device, query]) => {
+      const entries = Object.entries(mediaQueries).map(([variable, query]) => {
         const match = window.matchMedia(query).matches;
 
-        return [device, match];
+        return [variable, match];
       });
 
-      const matchedMedia: MatchedMedia = Object.fromEntries(entries);
+      const newMediaQueriesResult: MediaQueriesResult = Object.fromEntries(entries);
 
-      setMatchedMedia(matchedMedia);
+      setMediaQueriesResult(newMediaQueriesResult);
     }
 
     setTimeout(handleResize);
@@ -38,5 +49,5 @@ export function useMatchMedia(): MatchedMedia {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return matchedMedia;
+  return mediaQueriesResult;
 }

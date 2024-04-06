@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 10.6vw;
+  line-height: 1.5;
+  color: var(--fg-color);
+  font-family: 'Anek Latin', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  will-change: font-variation-settings;
+}
+
+.card {
+  width: max-content;
+  height: max-content;
+  opacity: 0;
+  transition:
+    opacity 300ms,
+    transform 500ms ease-out;
+  will-change: transform;
+
+  position: fixed;
+  inset: 0;
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+}
