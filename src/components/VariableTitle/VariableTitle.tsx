@@ -9,11 +9,12 @@ import type { FC, HTMLAttributes } from 'react';
 
 export interface TitleProps extends HTMLAttributes<HTMLDivElement> {
   text: string;
+  fontSizeInVW?: number;
   card?: JSX.Element;
 }
 
 const VariableTitle: FC<TitleProps> = (props) => {
-  const { className, text, card, ...restProps } = props;
+  const { className, text, fontSizeInVW = 10, card, ...restProps } = props;
   const [showedCard, setShowedCard] = useState(false);
   const titleRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -69,6 +70,7 @@ const VariableTitle: FC<TitleProps> = (props) => {
         <div
           className={styles.title}
           ref={titleRef}
+          style={{ fontSize: `${fontSizeInVW}vw` }}
           dangerouslySetInnerHTML={{ __html: text }}
           onMouseEnter={handleShowCard}
           onMouseLeave={handleHideCard}
@@ -85,11 +87,12 @@ const VariableTitle: FC<TitleProps> = (props) => {
 };
 
 const StaticTitle: FC<TitleProps> = (props) => {
-  const { className, text, ...restProps } = props;
+  const { className, text, fontSizeInVW = 10, ...restProps } = props;
 
   return (
     <div
       className={cn(styles.title, className)}
+      style={{ fontSize: `${fontSizeInVW}vw` }}
       dangerouslySetInnerHTML={{ __html: text }}
       {...restProps}
     />

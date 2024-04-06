@@ -8,7 +8,11 @@ import type { FC } from 'react';
 const IndexPage: FC = () => {
   return (
     <div className={styles.wrapper}>
-      <VariableTitle text="outsetend" card={<ProfileCard />} />
+      <VariableTitle
+        text="HEY I'M TANYA <BR/> FRONTEND DEV"
+        fontSizeInVW={12}
+        card={<ProfileCard />}
+      />
     </div>
   );
 };
