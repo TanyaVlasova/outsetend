@@ -1,6 +1,6 @@
 .burgerMenu {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   background-color: var(--fg-color);
   color: var(--bg-color);
   font-family: var(--icons);
@@ -14,7 +14,7 @@
 }
 
 .icon {
-  font-size: 30px;
+  font-size: 22px;
 }
 
 @media (hover: none) {
@@ -25,7 +25,11 @@
 
 @media (max-width: 360px) {
   .burgerMenu {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .icon {
+    font-size: 16px;
   }
 }
