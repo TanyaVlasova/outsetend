@@ -7,3 +7,15 @@ body {
   overflow-x: hidden;
   transition: var(--change-theme);
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fg-color);
+}
