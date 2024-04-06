@@ -84,4 +84,25 @@ const VariableTitle: FC<VariableTitleProps> = (props) => {
   );
 };
 
-export default VariableTitle;
+const VariableTitleContainer: FC<VariableTitleProps> = (props) => {
+  const { hasCursor } = useMatchMedia();
+  const [angle, setAngle] = useState(0);
+
+  function handleChange() {
+    setAngle(window.screen.orientation.angle);
+  }
+
+  useEffect(() => {
+    window.screen.orientation.addEventListener('change', handleChange);
+
+    return () => window.screen.orientation.removeEventListener('change', handleChange);
+  }, []);
+
+  return hasCursor ? (
+    <VariableTitle {...props} text={angle.toString()} />
+  ) : (
+    <VariableTitle {...props} text={angle.toString()} />
+  );
+};
+
+export default VariableTitleContainer;
