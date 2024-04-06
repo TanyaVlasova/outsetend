@@ -59,7 +59,7 @@ const Navigation: FC<NavigationProps> = (props) => {
         </div>
       )}
 
-      <Link className={styles.item} to="/Portfolio/about" onClick={handleClose}>
+      <Link className={styles.item} to="/Portfolio" onClick={handleClose}>
         <span className={styles.icon}>face</span>
         <span>Обо мне</span>
       </Link>
