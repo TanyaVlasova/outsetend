@@ -70,7 +70,7 @@ const VariableTitle: FC<TitleProps> = (props) => {
         <div
           className={styles.title}
           ref={titleRef}
-          style={{ fontSize: `${fontSizeInVW}vw` }}
+          style={{ fontSize: `clamp(0px, ${fontSizeInVW}vw, ${(1920 * fontSizeInVW) / 100}px)` }}
           dangerouslySetInnerHTML={{ __html: text }}
           onMouseEnter={handleShowCard}
           onMouseLeave={handleHideCard}
@@ -92,7 +92,7 @@ const StaticTitle: FC<TitleProps> = (props) => {
   return (
     <div
       className={cn(styles.title, className)}
-      style={{ fontSize: `${fontSizeInVW}vw` }}
+      style={{ fontSize: `clamp(0px, ${fontSizeInVW}vw, ${(1920 * fontSizeInVW) / 100}px)` }}
       dangerouslySetInnerHTML={{ __html: text }}
       {...restProps}
     />
