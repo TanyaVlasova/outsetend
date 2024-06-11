@@ -17,7 +17,6 @@
 
 @media (max-width: 1280px) {
   .page {
-    font-size: 16px;
     padding: 6.25em 4em;
     row-gap: 4em;
   }
