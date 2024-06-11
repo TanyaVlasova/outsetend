@@ -6,8 +6,6 @@
   border-top: 1px solid var(--fg-color);
   border-bottom: 1px solid var(--fg-color);
   box-sizing: border-box;
-  gap: 1px;
-  background-color: var(--fg-color);
   margin-bottom: 150px;
   transition: var(--change-theme);
 }
@@ -32,15 +30,25 @@
 
 .nickname {
   font-size: 55px;
+  border-right: 1px solid var(--fg-color);
+  border-bottom: 1px solid var(--fg-color);
+}
+
+.navigation {
+  border-right: 1px solid var(--fg-color);
+  border-bottom: 1px solid var(--fg-color);
 }
 
 .email {
   font-size: 20px;
+  border-right: 1px solid var(--fg-color);
+  border-bottom: 1px solid var(--fg-color);
 }
 
 .tagline {
   font-size: 20px;
   text-align: center;
+  border-bottom: 1px solid var(--fg-color);
 }
 
 .socials {
