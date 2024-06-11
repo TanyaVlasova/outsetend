@@ -1,9 +1,9 @@
 import VariableTitle from 'components/VariableTitle';
 import ProfileCard from 'components/ProfileCard';
 
-import List from 'ui/List';
+import List from 'components/List';
 
-import { generalInfo, experience } from './data';
+import { generalInfo, experience, skills } from './data';
 import styles from './IndexPage.module.css';
 
 import type { FC } from 'react';
@@ -18,8 +18,9 @@ const IndexPage: FC = () => {
         card={<ProfileCard />}
       />
 
-      <List className={styles.list} data={generalInfo} />
-      <List className={styles.list} data={experience} />
+      <List className={styles.list} data={generalInfo} itemType="default" />
+      <List className={styles.list} data={experience} itemType="default" />
+      <List className={styles.list} data={skills} itemType="scale" withImages />
     </div>
   );
 };
