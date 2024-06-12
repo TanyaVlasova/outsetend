@@ -3,6 +3,8 @@
   font-size: 18px;
   line-height: 1.5;
   font-weight: 600;
+  color: var(--fg-color);
+  transition: var(--change-theme);
 }
 
 .title {
@@ -15,7 +17,7 @@
   margin: 0;
   list-style: none;
   padding: 0;
-  border-bottom: 1px solid var(--fg-color);
+  border-bottom: 1px solid;
 }
 
 .item {
@@ -29,15 +31,15 @@
 }
 
 .item.withSeparator {
-  border-top: 1px solid var(--fg-color);
+  border-top: 1px solid;
 }
 
 .item:first-child {
-  border-top: 1px solid var(--fg-color);
+  border-top: 1px solid;
 }
 
 .item.withImages {
-  border-top: 1px solid var(--fg-color);
+  border-top: 1px solid;
   padding: 1.5em 0;
 }
 
@@ -64,13 +66,14 @@
   width: 30%;
   min-width: 150px;
   height: 10px;
-  border: 1px solid var(--fg-color);
+  border: 1px solid;
   box-sizing: border-box;
 }
 
 .filling {
   height: 100%;
   background-color: var(--fg-color);
+  transition: var(--change-theme);
 }
 
 @media (max-width: 1280px) {

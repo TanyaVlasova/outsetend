@@ -18,6 +18,7 @@
   font-weight: 400;
   font-style: normal;
   will-change: font-variation-settings;
+  transition: var(--change-theme);
 }
 
 .card {
