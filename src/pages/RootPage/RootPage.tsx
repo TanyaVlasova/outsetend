@@ -5,6 +5,7 @@ import { useState, type FC, useEffect } from 'react';
 import Sidebar from 'layouts/Sidebar';
 import Header from 'layouts/Header';
 import Footer from 'layouts/Footer';
+import Toasts from 'components/Toasts';
 import CustomCursor from 'components/CustomCursor';
 
 import styles from './RootPage.module.css';
@@ -24,6 +25,7 @@ const RootPage: FC = () => {
       {isMobile ? <Sidebar /> : <Header />}
       <Outlet />
       <Footer />
+      <Toasts />
       <CustomCursor />
     </div>
   );

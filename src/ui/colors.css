@@ -1,6 +1,9 @@
 :root {
   --bg-color: #e3f7f7;
   --fg-color: #0b0a0a;
+  --green: #618f60;
+  --red: #a76a6a;
+  --purple: #826897;
 }
 
 :root.dark {
