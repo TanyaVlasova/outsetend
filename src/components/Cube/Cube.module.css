@@ -30,6 +30,7 @@
   border: 1px solid var(--fg-color);
   color: var(--fg-color);
   transition: var(--change-theme);
+  backface-visibility: hidden;
 }
 
 .front {

@@ -10,10 +10,6 @@
   row-gap: 6.25em;
 }
 
-.cube {
-  margin: 0 auto;
-}
-
 @media (max-width: 1280px) {
   .page {
     padding: 6.25em 4em;
